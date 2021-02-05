@@ -80,12 +80,11 @@ normPeps2 <- lapply(peps2, normFrac)
 ## 3. Smooth signals with moving average ##
 
 #function for smoothing all profiles in a given table
-smoothProfile <- function(table){
+smoothProfile <- function(table, windowSize = 4){
   #iterate over all rows of the table
   smoothed <- apply(table[,-c(1,2)], 1, function(profile){
-    noise <- runif(n = 2, min = 0, max = 1e-10)
-    toSmooth <- c(rep(0,2), t(profile), rep(0,2))
-    return(forecast::ma(toSmooth, 4)[3:98])
+    toSmooth <- c(rep(0,round(windowSize/2)), t(profile), rep(0,round(windowSize/2)))
+    return(forecast::ma(toSmooth, windowSize)[3:98])
   })
   
   return(cbind(table[,c(1,2)], t(smoothed)))
