@@ -49,6 +49,26 @@ Data frame with conditional remodeling scores for each PPI in reference interact
 * A positive score suggests PPI disruption
 * A negative score suggests PPI strengthening
 
+# How to use pipeline
+
+* **Formatting raw MaxQuant files**
+  * *formatMaxQuantPeptides.R*
+  * *formatMaxQuantProteins.R*
+
+* **Pre-processing**
+  * *preprocessing.R*: Normalize and smooth CF/MS profiles.
+    *  Different types of normalization supported
+    *  Different sliding window lengths for smoothing supported
+  * *createProteinProfiles.R*
+    * Filter oulier sibling peptides using different methods
+    * Sum/average sibling peptides to corresponding protein profiles
+
+* **Compute conditional similarities**
+  * *computeConditionalSimilarities.R*
+
+* **Compute remodeling scorese**
+  * *computeRemodelingScores.R*
+
 # Case study
 
 To see an application of the pipeline to make discoveries on the dynamics of the *E. coli* interactome, see [Youssef et al. (2023)](https://www.authorea.com/users/602611/articles/633380-dynamic-remodeling-of-escherichia-coli-interactome-in-response-to-environmental-perturbations?commit=26cb401024abe8cce3117ce3e44ece4078c18892).
