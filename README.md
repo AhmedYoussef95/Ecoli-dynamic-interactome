@@ -19,6 +19,10 @@ from [Youssef et al., 2023](https://www.authorea.com/users/602611/articles/63338
 
 ![](https://github.com/AhmedYoussef95/Image-dump/blob/main/Fig%202.png)
 
+# Motivation
+
+Protein-protein interactions are dynamic connections that form and disrupt in response to different triggers, yet most studies of the interactome have been in a static manner. As more studies on interactome dynamics emerge, we developed this tool to enable the associated computational analysis in a  generalizable manner.
+
 # Inputs
 
 * **Conditional CF/MS data**  
@@ -44,4 +48,8 @@ Data frame with conditional remodeling scores for each PPI in reference interact
 * A score of 0 means no change in PPI behavior compared to the reference condition
 * A positive score suggests PPI disruption
 * A negative score suggests PPI strengthening
+
+# Case study
+
+To see an application of the pipeline to make discoveries on the dynamics of the *E. coli* interactome, see [Youssef et al. (2023)](https://www.authorea.com/users/602611/articles/633380-dynamic-remodeling-of-escherichia-coli-interactome-in-response-to-environmental-perturbations?commit=26cb401024abe8cce3117ce3e44ece4078c18892).
 
